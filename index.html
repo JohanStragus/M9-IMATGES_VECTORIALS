@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pràctica d'imatges vectorials keyframes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            color: #333;
+            margin: 20px 0;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-card {
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden; /* Per controlar l'animació dins el marc */
+        }
+        .image-card:hover {
+            transform: translateY(-10px) scale(1.05); /* Es mou cap amunt i s'escala */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Augmenta l'ombra */
+        }
+        .image-card img {
+            max-width: 200px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        .image-card p {
+            margin-top: 10px;
+            color: #555;
+            font-size: 14px;
+        }
+
+        /* Animacions per a cada imatge */
+
+        /* Logo Apple: rotació */
+        .image-card:nth-child(1) img {
+            animation: spin 3s infinite linear;
+        }
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Logo Ring Boxeo: moviment de rebot exagerat */
+        .image-card:nth-child(2) img {
+            animation: exaggerated-bounce 2.5s infinite ease-in-out;
+        }
+        @keyframes exaggerated-bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            25% {
+                transform: translateY(-80px); /* Rebot més alt */
+            }
+            50% {
+                transform: translateY(20px); /* Descens més dramàtic */
+            }
+            75% {
+                transform: translateY(-40px); /* Un rebot més suau abans de tornar */
+            }
+        }
+
+        /* Logo Adventure: moviment de zoom */
+        .image-card:nth-child(3) img {
+            animation: zoom 4s infinite ease-in-out;
+        }
+        @keyframes zoom {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+
+        /* Logo Pájaro: efecte de batre d'ales */
+        .image-card:nth-child(4) img {
+            animation: flap 2s infinite ease-in-out;
+        }
+        @keyframes flap {
+            0%, 100% {
+                transform: scale(1) rotate(0deg);
+            }
+            25% {
+                transform: scale(1.1) rotate(-10deg); /* Moviment cap avall */
+            }
+            50% {
+                transform: scale(1.1) rotate(10deg); /* Moviment cap amunt */
+            }
+            75% {
+                transform: scale(1.1) rotate(-5deg); /* Suavitzar el retorn */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Pràctica d'imatges vectorials</h1>
+    <div class="container">
+        <!-- Logo Apple amb animació -->
+        <div class="image-card">
+            <img src="Apple_img.svg" alt="Logo Apple">
+            <p>Logo Apple</p>
+        </div>
+        <!-- Logo Ring Boxeo amb animació -->
+        <div class="image-card">
+            <img src="Ring_boxeo.svg" alt="Logo Ring Boxeo">
+            <p>Logo Ring Boxeo</p>
+        </div>
+        <!-- Logo Adventure amb animació -->
+        <div class="image-card">
+            <img src="Logo_adventure.svg" alt="Logo Adventure">
+            <p>Logo Adventure</p>
+        </div>
+        <!-- Logo Pájaro amb efecte de batre d'ales -->
+        <div class="image-card">
+            <img src="pájaro.svg" alt="pájaro">
+            <p>Logo pájaro</p>
+        </div>
+    </div>
+</body>
+</html>
+
